@@ -18,5 +18,10 @@ export class HomePage {
       (data)=>{this.empleados = data;},
       (error)=>{console.log(error);}
     )
+
+
   }
+  abrirInfoEmpleado(){
+  this.navCtrl.push("InfoEmpleadoPage");
+}
 }

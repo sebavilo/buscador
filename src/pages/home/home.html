@@ -20,7 +20,8 @@
 <ion-content padding>
 <ion-list>
     <button ion-item *ngFor="let empleado of empleados">
-      {{empleado.id}} - {{empleado.name}}
+      <a href="InfoEmpleadoPage" target="_blank">
+      {{empleado.id}}. {{empleado.apellido}}, {{empleado.nombre}} </a>
     </button>
 </ion-list>
 

@@ -12,6 +12,19 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BuscaProvider } from '../providers/busca/busca';
 import { HttpClientModule } from '@angular/common/http';
+import { Component, ViewChild } from '@angular/core';
+import { List } from 'ionic-angular';
+
+@Component({})
+export class MyClass {
+  @ViewChild(List) list: List;
+
+  constructor() { }
+
+  stopSliding() {
+    this.list.closeSlidingItems();
+  }
+}
 
 @NgModule({
   declarations: [
