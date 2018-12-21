@@ -1,16 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>HAIBU</ion-title>
-
+  </ion-navbar>
 </ion-header>
 
-<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-<ion-list>
-  <ion-item *ngFor="let item of items">
-    {{ item }}
-  </ion-item>
-</ion-list>
-</ion-navbar>
-
 <ion-content padding>
+  <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+
+<ion-list inset>
+  <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+    {{ item }}
+  </button>
+</ion-list>
+
 </ion-content>
