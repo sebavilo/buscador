@@ -1,6 +1,10 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>HAIBU</ion-title>
+  <ion-navbar color="fondo">
+
+
+    <ion-title>
+        <div text-center>HAIBU</div>
+    </ion-title>
 
 
   <ion-searchbar
@@ -14,10 +18,10 @@
 </ion-header>
 
 <ion-content padding>
-<ion-list inset>
-  <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-    {{ item }}
-  </button>
+<ion-list>
+    <button ion-item *ngFor="let empleado of empleados">
+      {{empleado.id}} - {{empleado.name}}
+    </button>
 </ion-list>
 
 </ion-content>
