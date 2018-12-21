@@ -9,6 +9,11 @@ import { BuscaProvider } from '../../providers/busca/busca';
 export class HomePage {
 
   empleados
+  infoempleado = "InfoEmpleadoPage";
+  paramsParaInfoEmpleado = {
+    nombre : "1nombre",
+    apellido : "2apellido"  
+  };
 
   constructor(public navCtrl: NavController,public busca:BuscaProvider) {}
 
@@ -21,7 +26,5 @@ export class HomePage {
 
 
   }
-  abrirInfoEmpleado(){
-  this.navCtrl.push("InfoEmpleadoPage");
-}
+
 }
