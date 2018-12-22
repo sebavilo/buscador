@@ -8,14 +8,13 @@ import { BuscaProvider } from '../../providers/busca/busca';
 })
 export class HomePage {
 
-  empleados
+  empleados:any;
+  items:any;
   infoempleado = "InfoEmpleadoPage";
-  paramsParaInfoEmpleado = {
-    nombre : "1nombre",
-    apellido : "2apellido"  
-  };
 
-  constructor(public navCtrl: NavController,public busca:BuscaProvider) {}
+  constructor(public navCtrl: NavController,public busca:BuscaProvider) {
+    this.initializeItems();
+  }
 
   ionViewDidLoad(){
     this.busca.obtenerDatos()
@@ -25,6 +24,22 @@ export class HomePage {
     )
 
 
+  }
+
+  initializeItems(){
+    this.empleados=this.empleados;
+  }
+
+  getItems(events:any){
+    this.initializeItems();
+
+    const val = events.target.value;
+
+    if (val && val.trim() != ' '){
+      this.empleados = this.empleados.filter((item) => {
+        return (item.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      });
+    }
   }
 
 }

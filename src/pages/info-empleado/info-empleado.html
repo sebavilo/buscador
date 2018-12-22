@@ -6,13 +6,23 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>info-empleado</ion-title>
+  <ion-navbar color="fondo">
+    <ion-title>Datos del empleado</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+<p>ID:  {{objetoRecibido.id}}</p>
+<p>Nombre:  {{objetoRecibido.nombre}}</p>
+<p>Apellido: {{objetoRecibido.apellido}}</p>
+<p>Teléfono: {{objetoRecibido.telefono}}</p>
+<p>RUT: {{objetoRecibido.rut}}</p>
+<p>F. Nac: {{objetoRecibido.fechaNacimiento}}</p>
+<p><b><u>Dirección</u></b></p>
+<p>Calle: {{objetoRecibido.direccion.calle}}</p>
+<p>Número: {{objetoRecibido.direccion.numero}}</p>
+<p>Comuna: {{objetoRecibido.direccion.comuna}}</p>
+<p>Activo: {{objetoRecibido.activo}}</p>
 </ion-content>

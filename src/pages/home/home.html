@@ -7,21 +7,17 @@
     </ion-title>
 
 
-  <ion-searchbar
-  [(ngModel)]="myInput"
-  [showCancelButton]="shouldShowCancel"
-  (ionInput)="onInput($event)"
-  (ionCancel)="onCancel($event)"
-  placeholder="Buscar">
+<ion-searchbar  [showCancelButton]="shouldShowCancel" (ionInput)="getItems($event)" animated="true" placeholder="Buscar">
 </ion-searchbar>
+
 </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 <ion-list>
-    <button ion-item *ngFor="let empleado of empleados">
-      <a href="{{empleado.id}}" target="_blank">
-      {{empleado.id}}. {{empleado.apellido}}, {{empleado.nombre}} </a>
+    <button ion-item *ngFor="let empleado of empleados" [navPush]="infoempleado" [navParams]="empleado">
+
+      {{empleado.id}}. {{empleado.apellido}}, {{empleado.nombre}}
     </button>
 </ion-list>
 

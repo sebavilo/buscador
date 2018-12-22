@@ -15,7 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InfoEmpleadoPage {
 
+  objetoRecibido: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.objetoRecibido = navParams.data;
   }
 
   ionViewDidLoad() {
