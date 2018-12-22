@@ -27,13 +27,13 @@ export class HomePage {
   }
 
   initializeItems(){
-    this.empleados=this.empleados;
+    this.items=this.empleados;
   }
 
-  getItems(events:any){
+  getItems(ev:any){
     this.initializeItems();
 
-    const val = events.target.value;
+    const val = ev.target.value;
 
     if (val && val.trim() != ' '){
       this.empleados = this.empleados.filter((item) => {
